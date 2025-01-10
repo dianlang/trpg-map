@@ -53,15 +53,15 @@
             top: 45%;
         }
 
-        /* 绿地样式 */
+        /* 广场样式 */
         .park {
             position: absolute;
             width: 100px;
             height: 100px;
-            background-color: #7f9a44;
+            background-color: #6b6b71;
             border-radius: 50%;
-            top: 60%;
-            left: 30%;
+            top: 40%;
+            left: 35%;
         }
 
         /* 建筑物样式 */
@@ -193,14 +193,17 @@
         <div class="building shop"></div>
 
         <!-- 城镇各个地点 -->
-        <div class="location" style="top: 8%; left: 12%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
-        <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆【梦想之家】</div>
-        <div class="location" style="top: 50%; left: 60%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆【炎帝之傲】</div>
+        <div class="location" style="top: 55%; left: 0%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
+        <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆<br>【梦想之家】</div>
+        <div class="location" style="top: 50%; left: 70%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆</div>
+        <div class="location" style="top: 40%; left: 70%;" onclick="showInfo('医院')">医院</div>
         <div class="location" style="top: 50%; left: 50%;" onclick="showInfo('冒险者工会')">冒险者工会</div>
-        <div class="location" style="top: 15%; left: 45%;" onclick="showInfo('集市')">集市</div>
-        <div class="location" style="top: 60%; left: 20%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
-        <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('教堂')">教堂</div>
+        <div class="location" style="top: 45%; left: 38%;" onclick="showInfo('集市')">集市</div>
+        <div class="location" style="top: 45%; left: 100%;" onclick="showInfo('城门')">城门</div>
+        <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
+        <div class="location" style="top: 35%; left: 30%;" onclick="showInfo('教堂')">教堂</div>
     </div>
+
 
     <!-- 右侧详细信息展示区域 -->
     <div class="details-container">
@@ -218,7 +221,7 @@
             switch(location) {
                 case '转职馆【萨=库拉纳】':
                     locationName.textContent = '转职馆【萨=库拉纳】';
-                    locationDetails.textContent = '经常会有可爱的女孩子出没的新开转职馆，其真实面目是....';
+                    locationDetails.textContent = '最近开始营业的新转职馆。经常会有色色的女孩子出没，其真实面目是....';
                     break;
                 case '转职馆【梦想之家】':
                     locationName.textContent = '转职馆【梦想之家】';
@@ -226,7 +229,7 @@
                     break;
                 case '酒馆【炎帝之傲】':
                     locationName.textContent = '酒馆【炎帝之傲】';
-                    locationDetails.textContent = '这座酒馆以其烈酒和热情的氛围闻名，常常是冒险者和旅行者聚集的地方。';
+                    locationDetails.textContent = '以炎帝之命的酒馆，因其烈酒和热情的氛围闻名，常常是冒险者和旅行者聚集的地方。';
                     break;
                 case '冒险者工会':
                     locationName.textContent = '冒险者工会';
@@ -236,9 +239,17 @@
                     locationName.textContent = '集市';
                     locationDetails.textContent = '这里是买卖商品的地方，商贩和顾客络绎不绝。';
                     break;
+                case '医院':
+                    locationName.textContent = '医院';
+                    locationDetails.textContent = '受伤的冒险者可以在这里获得治疗，只剩一口气的冒险者都能救活';
+                    break;
                 case '妓院【兔子馆】':
                     locationName.textContent = '妓院【兔子馆】';
                     locationDetails.textContent = '这里是一个著名的娱乐场所，以其独特的风格吸引了许多顾客。';
+                    break;
+                case '城门':
+                    locationName.textContent = '城门';
+                    locationDetails.textContent = '边境小镇的大门，往来的冒险者络绎不绝';
                     break;
                 case '教堂':
                     locationName.textContent = '教堂';
