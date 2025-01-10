@@ -11,6 +11,9 @@
             margin: 0;
             padding: 20px;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         h1 {
             text-align: center;
@@ -18,17 +21,64 @@
         }
         .map-container {
             position: relative;
-            width: 60%;
+            width: 800px;
             height: 600px;
-            background-image: url('image/map.jpg'); /* 替换为您的背景地图 */
-            background-size: cover; 
-            background-position: center; 
+            background-color: #e0e0e0;
             border: 2px solid #333;
+            border-radius: 10px;
         }
+        /* 添加道路样式 */
+        .road {
+            position: absolute;
+            background-color: #aaa;
+            border-radius: 5px;
+        }
+        .vertical-road {
+            width: 30px;
+            height: 100%;
+            left: 40%;
+            top: 0;
+        }
+        .horizontal-road {
+            height: 30px;
+            width: 100%;
+            top: 45%;
+        }
+        /* 添加绿地样式 */
+        .park {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #7f9a44;
+            border-radius: 50%;
+            top: 60%;
+            left: 30%;
+        }
+        /* 添加建筑样式 */
+        .building {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #b5b5b5;
+            border-radius: 5px;
+        }
+        .castle {
+            left: 70%;
+            top: 10%;
+        }
+        .temple {
+            left: 15%;
+            top: 25%;
+        }
+        .shop {
+            left: 50%;
+            top: 65%;
+        }
+
         .location {
             position: absolute;
             padding: 5px 10px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
             border-radius: 5px;
             cursor: pointer;
@@ -57,10 +107,23 @@
 </head>
 <body>
     <div class="map-container">
-        <!-- 地点的百分比位置 -->
+        <!-- 添加道路 -->
+        <div class="road vertical-road"></div>
+        <div class="road horizontal-road"></div>
+
+        <!-- 添加绿地 -->
+        <div class="park"></div>
+
+        <!-- 添加建筑 -->
+        <div class="building castle"></div>
+        <div class="building temple"></div>
+        <div class="building shop"></div>
+
+        <!-- 城镇各个地点 -->
         <div class="location" style="top: 8%; left: 12%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
         <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆【梦想之家】</div>
         <div class="location" style="top: 50%; left: 60%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆【炎帝之傲】</div>
+        <div class="location" style="top: 50%; left: 45%;" onclick="showInfo('冒险者工会')">冒险者工会</div>
         <div class="location" style="top: 15%; left: 45%;" onclick="showInfo('集市')">集市</div>
         <div class="location" style="top: 60%; left: 20%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
         <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('教堂')">教堂</div>
@@ -82,15 +145,19 @@
             switch(location) {
                 case '转职馆【萨=库拉纳】':
                     locationName.textContent = '转职馆【萨=库拉纳】';
-                    locationDetails.textContent = '这里是一个专门为冒险者提供职业转职服务的地方。';
+                    locationDetails.textContent = '经常会有可爱的女孩子出没的新开转职馆，其真实面目是....';
                     break;
                 case '转职馆【梦想之家】':
                     locationName.textContent = '转职馆【梦想之家】';
-                    locationDetails.textContent = '在这里，你可以追寻自己的梦想，选择适合你的职业。';
+                    locationDetails.textContent = '在这里，你可以追寻自己的梦想，选择适合你的职业。最近新招了可爱的女转职官哦，还有打折促销活动。';
                     break;
                 case '酒馆【炎帝之傲】':
                     locationName.textContent = '酒馆【炎帝之傲】';
-                    locationDetails.textContent = '这座酒馆以其烈酒和热情的氛围闻名，常常是冒险者和商人聚集的地方。';
+                    locationDetails.textContent = '这座酒馆以其烈酒和热情的氛围闻名，常常是冒险者和旅行者聚集的地方。';
+                    break;
+                case '冒险者工会':
+                    locationName.textContent = '冒险者工会';
+                    locationDetails.textContent = '小镇负责处理冒险者事务，以及接受各种委托的地方，是小镇最热闹的区域。';
                     break;
                 case '集市':
                     locationName.textContent = '集市';
