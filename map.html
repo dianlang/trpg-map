@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑团地图</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+        }
+        h1 {
+            text-align: center;
+            width: 100%;
+        }
+        .map-container {
+            position: relative;
+            width: 60%;
+            height: 600px;
+            background-image: url('image/map.jpg'); /* 替换为您的背景地图 */
+            background-size: cover; 
+            background-position: center; 
+            border: 2px solid #333;
+        }
+        .location {
+            position: absolute;
+            padding: 5px 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .details-container {
+            width: 35%;
+            margin-left: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .location-name {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- 地点的百分比位置 -->
+        <div class="location" style="top: 8%; left: 12%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
+        <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆【梦想之家】</div>
+        <div class="location" style="top: 50%; left: 60%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆【炎帝之傲】</div>
+        <div class="location" style="top: 15%; left: 45%;" onclick="showInfo('集市')">集市</div>
+        <div class="location" style="top: 60%; left: 20%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
+        <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('教堂')">教堂</div>
+    </div>
+
+    <!-- 右侧详细信息展示区域 -->
+    <div class="details-container">
+        <div id="location-name" class="location-name">选择一个地点</div>
+        <p id="location-details">点击地图上的地点查看详细信息。</p>
+        <button class="close-btn" onclick="clearInfo()">清除信息</button>
+    </div>
+
+    <script>
+        function showInfo(location) {
+            var locationName = document.getElementById('location-name');
+            var locationDetails = document.getElementById('location-details');
+
+            // 根据地点设置不同的详细信息
+            switch(location) {
+                case '转职馆【萨=库拉纳】':
+                    locationName.textContent = '转职馆【萨=库拉纳】';
+                    locationDetails.textContent = '这里是一个专门为冒险者提供职业转职服务的地方。';
+                    break;
+                case '转职馆【梦想之家】':
+                    locationName.textContent = '转职馆【梦想之家】';
+                    locationDetails.textContent = '在这里，你可以追寻自己的梦想，选择适合你的职业。';
+                    break;
+                case '酒馆【炎帝之傲】':
+                    locationName.textContent = '酒馆【炎帝之傲】';
+                    locationDetails.textContent = '这座酒馆以其烈酒和热情的氛围闻名，常常是冒险者和商人聚集的地方。';
+                    break;
+                case '集市':
+                    locationName.textContent = '集市';
+                    locationDetails.textContent = '这里是买卖商品的地方，商贩和顾客络绎不绝。';
+                    break;
+                case '妓院【兔子馆】':
+                    locationName.textContent = '妓院【兔子馆】';
+                    locationDetails.textContent = '这里是一个著名的娱乐场所，以其独特的风格吸引了许多顾客。';
+                    break;
+                case '教堂':
+                    locationName.textContent = '教堂';
+                    locationDetails.textContent = '这里是一个神圣的地方，提供祈祷、祝福和宗教仪式。';
+                    break;
+                default:
+                    locationName.textContent = '选择一个地点';
+                    locationDetails.textContent = '点击地图上的地点查看详细信息。';
+            }
+        }
+
+        function clearInfo() {
+            document.getElementById('location-name').textContent = '选择一个地点';
+            document.getElementById('location-details').textContent = '点击地图上的地点查看详细信息。';
+        }
+    </script>
+
+</body>
+</html>
