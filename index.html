@@ -12,39 +12,48 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
         }
+
         h1 {
             text-align: center;
             width: 100%;
         }
+
+        /* 地图容器 */
         .map-container {
             position: relative;
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             height: 600px;
             background-color: #e0e0e0;
             border: 2px solid #333;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
-        /* 添加道路样式 */
+
+        /* 道路样式 */
         .road {
             position: absolute;
             background-color: #aaa;
             border-radius: 5px;
         }
+
         .vertical-road {
             width: 30px;
             height: 100%;
             left: 40%;
             top: 0;
         }
+
         .horizontal-road {
             height: 30px;
             width: 100%;
             top: 45%;
         }
-        /* 添加绿地样式 */
+
+        /* 绿地样式 */
         .park {
             position: absolute;
             width: 100px;
@@ -54,7 +63,8 @@
             top: 60%;
             left: 30%;
         }
-        /* 添加建筑样式 */
+
+        /* 建筑物样式 */
         .building {
             position: absolute;
             width: 40px;
@@ -62,19 +72,23 @@
             background-color: #b5b5b5;
             border-radius: 5px;
         }
+
         .castle {
             left: 70%;
             top: 10%;
         }
+
         .temple {
             left: 15%;
             top: 25%;
         }
+
         .shop {
             left: 50%;
             top: 65%;
         }
 
+        /* 地点标签 */
         .location {
             position: absolute;
             padding: 5px 10px;
@@ -82,19 +96,23 @@
             color: white;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1em;
         }
+
         .details-container {
-            width: 35%;
-            margin-left: 20px;
+            width: 100%;
+            max-width: 350px;
             padding: 20px;
             background-color: white;
             border: 2px solid #333;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .location-name {
             font-size: 1.5em;
             margin-bottom: 15px;
         }
+
         .close-btn {
             background-color: red;
             color: white;
@@ -102,6 +120,61 @@
             padding: 5px 10px;
             cursor: pointer;
             margin-top: 10px;
+        }
+
+        /* 响应式布局调整 */
+        @media (max-width: 768px) {
+            .map-container {
+                height: 400px; /* 在手机屏幕下缩小地图高度 */
+            }
+
+            .details-container {
+                max-width: 90%;
+                margin-top: 10px;
+            }
+
+            /* 地图位置缩放，防止元素重叠 */
+            .location {
+                font-size: 0.8em;
+                padding: 3px 7px;
+            }
+
+            .park {
+                width: 80px;
+                height: 80px;
+                top: 65%;
+                left: 25%;
+            }
+
+            .building {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-container {
+                height: 300px; /* 更小的屏幕下进一步调整 */
+            }
+
+            .details-container {
+                max-width: 100%;
+            }
+
+            .location {
+                font-size: 0.7em; /* 更小字体，适应小屏幕 */
+                padding: 3px 6px;
+            }
+
+            .park {
+                width: 60px;
+                height: 60px;
+            }
+
+            .building {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -123,7 +196,7 @@
         <div class="location" style="top: 8%; left: 12%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
         <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆【梦想之家】</div>
         <div class="location" style="top: 50%; left: 60%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆【炎帝之傲】</div>
-        <div class="location" style="top: 50%; left: 45%;" onclick="showInfo('冒险者工会')">冒险者工会</div>
+        <div class="location" style="top: 50%; left: 50%;" onclick="showInfo('冒险者工会')">冒险者工会</div>
         <div class="location" style="top: 15%; left: 45%;" onclick="showInfo('集市')">集市</div>
         <div class="location" style="top: 60%; left: 20%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
         <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('教堂')">教堂</div>
