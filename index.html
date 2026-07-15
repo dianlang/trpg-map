@@ -3,269 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跑团地图</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-        }
+    <title>数码宝贝新手卡组推荐测试</title>
+    <link rel="stylesheet" href="styles.css">
 
-        h1 {
-            text-align: center;
-            width: 100%;
-        }
-
-        /* 地图容器 */
-        .map-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 600px;
-            background-color: #e0e0e0;
-            border: 2px solid #333;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* 道路样式 */
-        .road {
-            position: absolute;
-            background-color: #aaa;
-            border-radius: 5px;
-        }
-
-        .vertical-road {
-            width: 30px;
-            height: 100%;
-            left: 40%;
-            top: 0;
-        }
-
-        .horizontal-road {
-            height: 30px;
-            width: 100%;
-            top: 45%;
-        }
-
-        /* 广场样式 */
-        .park {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: #6b6b71;
-            border-radius: 50%;
-            top: 40%;
-            left: 35%;
-        }
-
-        /* 建筑物样式 */
-        .building {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: #b5b5b5;
-            border-radius: 5px;
-        }
-
-        .castle {
-            left: 70%;
-            top: 10%;
-        }
-
-        .temple {
-            left: 15%;
-            top: 25%;
-        }
-
-        .shop {
-            left: 50%;
-            top: 65%;
-        }
-
-        /* 地点标签 */
-        .location {
-            position: absolute;
-            padding: 5px 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        .details-container {
-            width: 100%;
-            max-width: 350px;
-            padding: 20px;
-            background-color: white;
-            border: 2px solid #333;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .location-name {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-
-        .close-btn {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        /* 响应式布局调整 */
-        @media (max-width: 768px) {
-            .map-container {
-                height: 400px; /* 在手机屏幕下缩小地图高度 */
-            }
-
-            .details-container {
-                max-width: 90%;
-                margin-top: 10px;
-            }
-
-            /* 地图位置缩放，防止元素重叠 */
-            .location {
-                font-size: 0.8em;
-                padding: 3px 7px;
-            }
-
-            .park {
-                width: 80px;
-                height: 80px;
-                top: 65%;
-                left: 25%;
-            }
-
-            .building {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .map-container {
-                height: 300px; /* 更小的屏幕下进一步调整 */
-            }
-
-            .details-container {
-                max-width: 100%;
-            }
-
-            .location {
-                font-size: 0.7em; /* 更小字体，适应小屏幕 */
-                padding: 3px 6px;
-            }
-
-            .park {
-                width: 60px;
-                height: 60px;
-            }
-
-            .building {
-                width: 30px;
-                height: 30px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="map-container">
-        <!-- 添加道路 -->
-        <div class="road vertical-road"></div>
-        <div class="road horizontal-road"></div>
+    <main class="page">
+        <section class="hero">
+            <div class="panel hero-main">
+                <span class="eyebrow">🧬 Digimon TCG Starter Finder</span>
+                <h1>用 8 道题，匹配你的第一套数码宝贝卡组</h1>
+                <p class="lead">新版测试会同时考虑操作难度、预算、进攻节奏、防守容错、角色偏好和练习目标。结果会给出主推荐、备选方向、上手练习和购买前提醒，更适合完全新手做第一步决策。</p>
+                <div class="hero-stats" aria-label="测试特点">
+                    <div class="stat"><strong>8</strong><span>道偏好题</span></div>
+                    <div class="stat"><strong>8</strong><span>个卡组方向</span></div>
+                    <div class="stat"><strong>3</strong><span>项练习建议</span></div>
+                </div>
+            </div>
+            <aside class="panel hero-side">
+                <h2>这次改进了什么？</h2>
+                <ul class="starter-list">
+                    <li>从单纯计票升级为多维权重评分，不同回答可以同时影响多个卡组。</li>
+                    <li>增加“主推荐 + 备选推荐”，避免结果过于单一。</li>
+                    <li>改成逐题答题，手机上更容易阅读，也更像真正的测试网站。</li>
+                </ul>
+            </aside>
+        </section>
 
-        <!-- 添加绿地 -->
-        <div class="park"></div>
+        <section class="quiz-shell">
+            <section class="panel quiz-panel" aria-label="卡组推荐测试">
+                <div class="step-top">
+                    <span class="eyebrow" id="categoryLabel">偏好测试</span>
+                    <span class="step-count" id="stepCount">第 1 / 8 题</span>
+                </div>
+                <div class="progress" aria-label="答题进度">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
 
-        <!-- 添加建筑 -->
-        <div class="building castle"></div>
-        <div class="building temple"></div>
-        <div class="building shop"></div>
+                <form id="quizForm">
+                    <div class="question-card" id="questionMount"></div>
+                    <div class="actions">
+                        <div class="button-row">
+                            <button type="button" class="ghost-btn" id="prevBtn">上一题</button>
+                            <button type="button" class="secondary-btn" id="nextBtn">下一题</button>
+                            <button type="submit" class="primary-btn" id="submitBtn">查看推荐</button>
+                        </div>
+                        <button type="button" class="ghost-btn" id="resetBtn">重新开始</button>
+                        <span class="hint" id="formHint">选择一个答案后继续。</span>
+                    </div>
+                </form>
+            </section>
 
-        <!-- 城镇各个地点 -->
-        <div class="location" style="top: 55%; left: 0%;" onclick="showInfo('转职馆【萨=库拉纳】')">转职馆【萨=库拉纳】</div>
-        <div class="location" style="top: 25%; left: 30%;" onclick="showInfo('转职馆【梦想之家】')">转职馆<br>【梦想之家】</div>
-        <div class="location" style="top: 50%; left: 70%;" onclick="showInfo('酒馆【炎帝之傲】')">酒馆</div>
-        <div class="location" style="top: 40%; left: 70%;" onclick="showInfo('医院')">医院</div>
-        <div class="location" style="top: 50%; left: 50%;" onclick="showInfo('冒险者工会')">冒险者工会</div>
-        <div class="location" style="top: 45%; left: 38%;" onclick="showInfo('集市')">集市</div>
-        <div class="location" style="top: 45%; left: 100%;" onclick="showInfo('城门')">城门</div>
-        <div class="location" style="top: 75%; left: 75%;" onclick="showInfo('妓院【兔子馆】')">妓院【兔子馆】</div>
-        <div class="location" style="top: 35%; left: 30%;" onclick="showInfo('教堂')">教堂</div>
-    </div>
+            <aside class="panel result-panel" id="resultPanel" aria-live="polite">
+                <span class="eyebrow">📋 推荐结果</span>
+                <p class="empty-result">完成全部题目后，这里会显示你的主推荐卡组、两个备选方向、分数构成、上手练习建议和购买前提醒。</p>
+            </aside>
+        </section>
+    </main>
 
-
-    <!-- 右侧详细信息展示区域 -->
-    <div class="details-container">
-        <div id="location-name" class="location-name">选择一个地点</div>
-        <p id="location-details">点击地图上的地点查看详细信息。</p>
-        <button class="close-btn" onclick="clearInfo()">清除信息</button>
-    </div>
-
-    <script>
-        function showInfo(location) {
-            var locationName = document.getElementById('location-name');
-            var locationDetails = document.getElementById('location-details');
-
-            // 根据地点设置不同的详细信息
-            switch(location) {
-                case '转职馆【萨=库拉纳】':
-                    locationName.textContent = '转职馆【萨=库拉纳】';
-                    locationDetails.textContent = '最近开始营业的新转职馆。经常会有色色的女孩子出没，其真实面目是....';
-                    break;
-                case '转职馆【梦想之家】':
-                    locationName.textContent = '转职馆【梦想之家】';
-                    locationDetails.textContent = '在这里，你可以追寻自己的梦想，选择适合你的职业。最近新招了可爱的女转职官哦，还有打折促销活动。';
-                    break;
-                case '酒馆【炎帝之傲】':
-                    locationName.textContent = '酒馆【炎帝之傲】';
-                    locationDetails.textContent = '以炎帝之命的酒馆，因其烈酒和热情的氛围闻名，常常是冒险者和旅行者聚集的地方。';
-                    break;
-                case '冒险者工会':
-                    locationName.textContent = '冒险者工会';
-                    locationDetails.textContent = '小镇负责处理冒险者事务，以及接受各种委托的地方，是小镇最热闹的区域。';
-                    break;
-                case '集市':
-                    locationName.textContent = '集市';
-                    locationDetails.textContent = '这里是买卖商品的地方，商贩和顾客络绎不绝。';
-                    break;
-                case '医院':
-                    locationName.textContent = '医院';
-                    locationDetails.textContent = '受伤的冒险者可以在这里获得治疗，只剩一口气的冒险者都能救活';
-                    break;
-                case '妓院【兔子馆】':
-                    locationName.textContent = '妓院【兔子馆】';
-                    locationDetails.textContent = '这里是一个著名的娱乐场所，以其独特的风格吸引了许多顾客。';
-                    break;
-                case '城门':
-                    locationName.textContent = '城门';
-                    locationDetails.textContent = '边境小镇的大门，往来的冒险者络绎不绝';
-                    break;
-                case '教堂':
-                    locationName.textContent = '教堂';
-                    locationDetails.textContent = '这里是一个神圣的地方，提供祈祷、祝福和宗教仪式。';
-                    break;
-                default:
-                    locationName.textContent = '选择一个地点';
-                    locationDetails.textContent = '点击地图上的地点查看详细信息。';
-            }
-        }
-
-        function clearInfo() {
-            document.getElementById('location-name').textContent = '选择一个地点';
-            document.getElementById('location-details').textContent = '点击地图上的地点查看详细信息。';
-        }
-    </script>
+    <script src="app.js" defer></script>
 
 </body>
 </html>
